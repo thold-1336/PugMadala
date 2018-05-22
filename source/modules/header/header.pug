@@ -1,0 +1,112 @@
+mixin mega-menu-item(title, ...datas)
+  .mega-menu__item
+    h4=title
+    ul.list-unstyled
+      each item in datas
+        li
+          a(href="", title="")= item
+mixin main-menu()
+  .menu__main
+    nav.navbar.navbar-expand-lg#navbar
+      button(
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent" 
+      )
+        span.navbar-toggler-icon
+          i.fa.fa-bars
+      .collapse.navbar-collapse#navbarSupportedContent
+        ul.navbar-nav
+          li.nav-item.active
+            a(class="nav-link", href="#", title="") Trang chủ
+          li.nav-item
+            a(class="nav-link", href="#", title="") Giới thiệu
+          li.nav-item.active-mega
+            a(class="nav-link d-none d-sm-inline-block", href="#", title="") Sản phẩm
+              i.fa.fa-angle-down
+            a(class="nav-link dropdown-toggle d-inline-block d-sm-none", data-toggle="dropdown") Sản phẩm
+            .mega-menu.d-none.d-sm-flex.justify-content-around
+              +mega-menu-item('Dưỡng da', 'Áo khoác', 'Bộ áo liền quần', 'Dresses', 'Quần / Váy', 'Quần short', 'Quần jean', 'Đồ đan', 'Áo nỉ')
+              +mega-menu-item('Nước hoa', 'Áo cánh / Áo sơ mi', 'Túi xách & Balô', 'Khăn quàng cổ và Foulards', 'Dệt kim Hats & Gloves', 'Vớ & Socks', 'Jewerly', 'Bị bảo vệ', 'Giày')
+              +mega-menu-item('Trang sức', 'Áo cánh / Áo sơ mi', 'Túi xách & Balô', 'Khăn quàng cổ và Foulards', 'Dệt kim Hats & Gloves', 'Vớ & Socks', 'Jewerly', 'Bị bảo vệ', 'Giày')
+            .dropdown.d-flex.flex-column.d-sm-none
+              .mega-menu.dropdown-menu.mega-mobile
+                +mega-menu-item('Dưỡng da', 'Áo khoác', 'Bộ áo liền quần', 'Dresses', 'Quần / Váy', 'Quần short', 'Quần jean', 'Đồ đan', 'Áo nỉ')
+                +mega-menu-item('Nước hoa', 'Áo cánh / Áo sơ mi', 'Túi xách & Balô', 'Khăn quàng cổ và Foulards', 'Dệt kim Hats & Gloves', 'Vớ & Socks', 'Jewerly', 'Bị bảo vệ', 'Giày')
+                +mega-menu-item('Trang sức', 'Áo cánh / Áo sơ mi', 'Túi xách & Balô', 'Khăn quàng cổ và Foulards', 'Dệt kim Hats & Gloves', 'Vớ & Socks', 'Jewerly', 'Bị bảo vệ', 'Giày')
+          li.nav-item
+            a(class="nav-link", href="#", title="") Tin Tức
+          li.nav-item
+            a(class="nav-link", href="#", title="") Bản đồ
+          li.nav-item
+            a(class="nav-link", href="#", title="") Liên hệ
+mixin slider()
+  .slider
+  .container
+    .row
+      .col-lg-6.col-sm-12
+        .slider__left.text-center
+          img(src="/images/bottle_03.jpg", alt="bottle", class="img-fluid")
+          h1 Green Vera
+          p Sản phẩm tinh dầu dưỡng da mới nhất của Mandala
+          h2 Giá chỉ 750.000đ
+          a(href="#", title="shop") Mua hàng
+      .col-lg-6.col-sm-12
+        .slider__right.text-center
+          img(src="images/girl.png", alt="girl")
+
+mixin header()
+  header
+    .menu
+      .container
+        .row.d-flex.align-items-center
+          .col-md-12.col-lg-2.mt-2.mt-lg-0
+            .site-logo.text-center.text-lg-left
+              a(href="#", title="logo")
+                img(src="images/logo.png")
+          .col-md-12.col-lg-8
+            +main-menu
+          .col-md-12.col-lg-2
+            ul.list-inline.menu__right.text-right
+              li.list-inline-item
+                a(href="#" title="cart icon")
+                  i.fa.fa-shopping-cart   
+                .menu__cart.text-left
+                  ul.list-unstyled
+                    li
+                      a(href="#", title="" class="remove-cart float-right") &times;
+                      a(href="#", title="")
+                        img(src="/images/product-cart.jpg", alt="product-cart" class="img-fluid float-left")
+                        .
+                          Áo sơ mi nam
+                        span. 
+                          120.000 #[sup đ]
+                    li
+                      a(href="#", title="" class="remove-cart float-right") &times;
+                      a(href="#", title="")
+                        img(src="/images/product-cart.jpg", alt="product-cart" class="img-fluid float-left")
+                        .
+                          Áo sơ mi nam
+                        span. 
+                          
+                          120.000 #[sup đ]
+                  .menu__cart--total
+                    span Tổng số
+                    span.float-right 240.000
+                      sup đ
+                    a(href="#", title="") Giỏ hàng
+              li.list-inline-item
+                a(href="#", title="")
+                  i.fa.fa-search
+                .search-form
+                  form.form-inline.my-2.my-lg-0
+                    input(
+                      type="search"
+                      class="form-control rounded-0"
+                      placeholder="Search"
+                      aria-label="Search"
+                    )
+                    button(class="btn rounded-0" type="submit")
+                      i.fa.fa-search
+    +slider

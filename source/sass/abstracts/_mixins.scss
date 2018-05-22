@@ -1,0 +1,50 @@
+// Custom Mixins 
+
+@mixin font-face ($family, $file) {
+  @font-face {
+    font-family: $family;
+    src: url('#{$path-font}/#{$file}-webfont') format('embedded-opentype'),
+    url('#{$path-font}/#{$file}-webfont.woff') format('woff'),
+    url('#{$path-font}/#{$file}-webfont.ttf') format('truetype');
+  }
+}
+
+// Text
+@mixin text ($size,
+$l-height: null,
+$weight: null,
+$color: null) {
+  font-size: $size;
+  line-height: $l-height;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin transition ( $transition...) {
+  transition: $transition;
+}
+
+@mixin border-radius ( $radius) {
+  border-radius: $radius;
+}
+
+@mixin border ($width,
+$style,
+$color) {
+  border-width: $width;
+  border-style: $style;
+  border-color: $color;
+}
+
+@mixin box-circle ( $width,
+$height,
+$l-height: null) {
+  width: $width;
+  height: $height;
+  line-height: $l-height;
+}
+
+@mixin font-size ($size) {
+  font-size: $size;
+  font-size: calculate-rem($size);
+}

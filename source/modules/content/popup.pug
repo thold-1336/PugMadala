@@ -1,0 +1,19 @@
+mixin popup()
+  section.overlay-newsletter
+  section.newsletter
+    .container
+      .newsletter_wrapper
+        a(href="#", title="close popup") &times;
+        .newsletter__content
+          h3 Gửi mail
+          p Hãy gửi email cua bạn liên hệ với chúng tôi để đc tư vấn tốt nhất 
+          p Sự hài lòng của bạn là thành công của chúng tôi
+          form(action="#")
+            .form-group
+              input(
+                type="email" 
+                name="email" 
+                class="form-control" 
+                placeholder="Email của bạn..."
+              )
+            button(class="btn", type="submit") Gửi email

@@ -1,0 +1,78 @@
+mixin feature-item(imagename, content)
+  .feature-box__item.d-flex.justify-content-start.d-sm-inline-block
+    img(src="images/" + imagename, alt="feature img", class="img-fluid mr-2 mr-sm-0")
+    p= content 
+
+mixin banner-img(img_name)
+  .col-12.col-sm-6.gutter-10
+    .banner-product__left--img
+      a(href="#", title="")
+        img(src="images/" + img_name, alt="banner product", class="img-fluid")
+  
+mixin banner-text(title, data)
+  .col-12.col-sm-6.gutter-10
+    div(class="banner-product__left--text d-flex justify-content-center align-items-center " + data)
+      h3= title
+
+mixin banner-promo(img_name, title, heading, link=null)
+    .banner-product__left--img
+      img(src="images/" + img_name, alt="", class="img-fluid")
+      .promo-content
+        span= title
+        h3= heading
+        if link != null
+          a(href="#", title="", class="float-right")= link
+
+mixin product-block(img_name, category, title, price, regular_price, sale_price)
+  .product-block
+    a(href="#", title="product")
+      img(src="images/" + img_name, alt="product", class="img-fluid")
+    .product-block__caption
+      h3.product-block__category
+        a(href="#", title="product title")= category
+      h4.product-block__title= title
+      span.product-block__separate
+      if price
+        span.product-block__price.
+          #{price} #[sup đ]
+      if regular_price
+        span.product-block__price--regular= regular_price
+          sup.
+            đ
+      if sale_price
+        span.product-block__price--sale= sale_price
+          sup.
+            đ
+    .product-block__action.align-content-center
+      a(href="#", title="", class="text-uppercase") mua hàng
+      a(href="#", title="", class="text-center")
+        i.fa.fa-heart
+      a(href="#", title="", class="text-center")
+        i.fa.fa-refresh
+
+
+mixin testimonial-item()
+  .testimonial__content
+    .testimonial__item
+      img(src="images/avatar.jpg", alt="avatar", class="img-fluid float-none float-sm-left mb-3 mb-lg-0")
+      .testimonial__item--right
+        blockquote Vẫn là vẻ bề ngoài vô cùng đơn giản với các tông màu trắng,hồng làm chủ đạo nhưng lại tạo ra sức hút kỳ lạ với những ai cầm trên tay sản phẩm ấy. Với công nghệ cải tiến mới nhất, hãng Rohto 
+        span TutiLe
+        em  _ Giám đốc phát triển sản phẩm
+
+mixin tab-menu(...data)
+  ul.nav.justify-content-center
+    each item in data
+      li.nav-item
+        a(href="#", title="", class="nav-link")=item
+
+mixin social(data)
+  .social__content
+    each val, index in data
+        a(href="#", title="").
+          #[i(class="fa fa-" + val)] 
+          #{index}
+          
+mixin product-tags(...data)
+  each item in data
+    a(href="", title="")=item

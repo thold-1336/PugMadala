@@ -1,0 +1,53 @@
+mixin footer-menu(title, ...data)
+  .site-footer__menu
+    h2= title
+    ul.list-unstyled
+      each item in data
+        li
+          a(href="#", title="")= item 
+  
+
+mixin footer()
+  footer 
+    .site-footer
+      .container
+        .row
+          .col-12.col-md-6.col-lg-4.mb-3.mb-lg-0
+            .contact-us
+              h2 Liên hệ với chúng tôi
+              p. 
+                #[i.fa.fa-map-marker] Tầng 4, Tòa nhà Hanoi Group Số 442 Đội Cấn, P. Cống Vị, Q. Ba Đình, Hà Nội
+              p
+                span.
+                  #[i.fa.fa-phone] (04) 6674 2332 
+                span.
+                  #[i.fa.fa-phone] (04) 3786 8904
+              p
+                span.
+                  #[i.fa.fa-phone] (08) 6680 9686
+                span.
+                  #[i.fa.fa-envelope] Support@bizweb.vn
+          .col-12.col-md-6.col-lg-2.mb-3.mb-lg-0
+            +footer-menu('chuyển hàng', 'mua sắm trực tuyến', 'Đến từ chúng tôi gửi đến', 'Chính sách vận chuyển', 'vận chuyển thông tin')
+          .col-12.col-md-6.col-lg-2.mb-3.mb-lg-0
+            +footer-menu('hỗ trợ', 'Câu chuyện của chúng ta', 'Thanh toán an toàn', 'Tùy chọn Vận Chuyển', 'Chính sách vận chuyển')
+          .col-12.col-md-6.col-lg-2.mb-3.mb-lg-0
+            +footer-menu('thông tin', 'Câu chuyện của chúng ta', 'Thanh toán an toàn', 'Tùy chọn Vận Chuyển', 'Chính sách vận chuyển')
+          .col-12.col-md-6.col-lg-2.mb-3.mb-lg-0
+            +footer-menu('my account', 'Xem Giỏ hàng', 'Sản phẩm yêu thích', 'kiểm tra', 'Theo dõi đặt hàng của tôi')
+    .copy-right
+      .container
+        .row
+          .col-sm-6.col-12.text-center.text-sm-left
+            p &copy; Copyright 2008-2014 DKT Technology JSC
+          .col-sm-6.col-12.text-center.text-sm-right
+            a(href="#", title="")
+              img(src="images/payment.png", alt="payment")
+  //- script(src='js/jquery-3.3.1.min.js')
+  script(src='js/main.js')
+  //- script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')
+  //- script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js')
+  //- script(src='js/owl.carousel.min.js')
+  //- script(src='js/wow.min.js')
+  //- script(src='js/functions.js')
+

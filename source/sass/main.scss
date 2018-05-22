@@ -1,0 +1,10 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'vendors/bootstrap-override-variable';
+@import 'font-awesome';
+
+@import 'abstracts/index';
+@import 'base/index';
+
+@import 'layout/index';
+@import 'plugins/index';
+@import 'components/index';

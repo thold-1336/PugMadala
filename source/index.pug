@@ -1,0 +1,242 @@
+include modules/head/head
+include modules/header/header
+include modules/content/content
+include modules/content/popup
+include modules/footer/footer
+
+doctype html
++head
+body
+	+header
+	main
+		section.feature-box
+			.container.text-center
+				.row
+					.col-sm-12.col-md-4
+						+feature-item('feature-img1.jpg', 'Miễn phí vận chuyển')
+					.col-sm-12.col-md-4
+						+feature-item('feature-img2.jpg', 'Nhận ngay quà tặng trị giá 350.000đ')
+					.col-sm-12.col-md-4
+						+feature-item('feature-img3.jpg', 'Giảm 30% cho đơn hàng trên 5.000.000đ')
+		// end .feature-box
+		section.banner-product
+			.container
+				.row.no-gutters
+					div(
+						class="col-md-12 col-lg-6 wow fadeInLeft"
+						data-wow-duration="1s"
+						data-wow-delay="0.5s"
+					)
+						.banner-product__left.d-flex
+							+banner-img('product1.jpg')
+							+banner-text('Sữa tắm', 'bg-sunflower')
+						.banner-product__left.d-flex
+							+banner-text('Nước hoa', 'bg-greyser')
+							.col-sm-6.gutter-10
+								+banner-promo('bg1.jpg', 'Từ 1/6 - 5/6/2015', '-40%', 'Mua hàng')
+					div(
+						class="col-md-12 col-lg-6 gutter-10 wow fadeInRight"
+						data-wow-duration="1s"
+						data-wow-delay="0.5s"
+					)
+						.banner-product__right
+							img(src="images/video-banner.jpg", alt="video banner", class="img-fluid")
+							.video-banner-content.d-flex.flex-column.justify-content-center.align-items-center
+								button(
+									type="button"
+									class="btn video-btn"
+									data-toggle="modal"
+									data-src="https://www.youtube.com/embed/MUCVB0TuQr4"
+									data-target="#myModal"
+								)
+									i(class="fa fa-play", aria-hidden="true")
+								h3 Corinne 2015
+								// Modal
+								div(
+									class="modal"
+									id="myModal"
+									tabindex="-1" 
+									role="dialog" 
+									aria-hidden="true"
+								)
+									div(class="modal-dialog modal-lg", role="document")
+										.modal-content
+											.modal-body
+												button(
+													type="button" 
+													class="close" 
+													data-dismiss="modal" aria-label="Close"
+												)
+													span(aria-hidden="true") &times;
+												.embed-responsive.embed-responsive-16by9
+													iframe(class="embed-responsive-item", id="video")
+				.row.no-gutters
+					div(
+						class="col-md-12 col-lg-6 gutter-10 wow fadeInUp"
+						data-wow-duration="1s" 
+						data-wow-delay="0.3s"
+					)
+						.banner-product__right
+							.promo-img
+								img(src="images/banner1.jpg", alt="", class="img-fluid")
+								.promo-content
+										p compo tắm trắng
+										h2 Tại Nhà
+					div(
+						class="col-md-12 col-lg-6 wow fadeInUp" 
+						data-wow-duration="1s" 
+						data-wow-delay="0.5s"
+					)
+						.banner-product__left.d-flex
+							+banner-text('Trang sức', 'bg-bermuda')
+							+banner-img('product2.jpg')
+						.banner-product__left.d-flex
+							+banner-img('banner2.jpg')
+							.col-12.col-sm-6.gutter-10
+								.bg-pink.banner-product__left--text.d-flex.flex-column.justify-content-center.align-items-center
+									img(src="images/banner-product.png", alt="banner-product", class="img-fluid")
+									h4 Quyến rũ hơn
+									h5. 
+										Cùng #[span DAISY] 
+		// end .banner-product
+		section.testimonial
+			.container
+				div(
+					class="carousel slide"
+					id="demo"
+					data-ride="carousel"
+				)
+					ul.carousel-indicators
+						li(data-target="#demo", data-slide-to="0", class="active")
+						li(data-target="#demo", data-slide-to="1")
+						li(data-target="#demo", data-slide-to="2")
+					.carousel-inner
+						.carousel-item.active
+							+testimonial-item
+						.carousel-item
+							+testimonial-item
+						.carousel-item
+							+testimonial-item
+		// end .testimonial
+		section.product-tabs
+			.container-fluid
+				.row
+					.col
+						ul.nav.nav-tabs.justify-content-center
+							li.nav-item
+								a(href="#home", data-toggle="tab", title="", class="nav-link") Sản phẩm mới
+							li.nav-item
+								a(href="#menu1", data-toggle="tab", title="", class="nav-link active") Sản phẩm bán chạy
+							li.nav-item
+								a(href="#menu2", data-toggle="tab", title="", class="nav-link") Sản phẩm đặc biệt
+						span.product-tabs__separate
+						.tab-content
+							div(class="tab-pane container-fluid active", id="home")
+								+tab-menu('Mỹ phẩm', 'Chăm sóc da', 'Dành cho tóc', 'Nước hoa', 'Trang sức', 'Quà tặng')
+								.owl-carousel
+									div(class="item wow zoomIn", data-wow-duration="1s")
+										+product-block('product9.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+									div(class="item wow zoomIn", data-wow-duration="2s", data-wow-delay="0.2s")
+										+product-block('product3.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+									div(class="item wow zoomIn", data-wow-duration="2s", data-wow-delay="0.4s")
+										+product-block('product4.jpg', 'home', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+									div(class="item wow zoomIn", data-wow-duration="2s", data-wow-delay="0.6s")
+										+product-block('product5.jpg', 'debora', 'Mỹ phẩm châu Âu', '355.000')
+									div(class="item wow zoomIn", data-wow-duration="2s", data-wow-delay="0.8s")
+										+product-block('product6.jpg', 'sarvon', 'Mỹ phẩm châu Âu', '355.000')
+									div(class="item wow zoomIn", data-wow-duration="2s", data-wow-delay="1s")
+										+product-block('product7.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+									.item
+										+product-block('product8.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+									.item
+										+product-block('product10.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+							div(class="tab-pane container-fluid", id="menu1")
+								+tab-menu('Mỹ phẩm', 'Chăm sóc da', 'Dành cho tóc', 'Nước hoa', 'Trang sức', 'Quà tặng')
+								.owl-carousel
+									div(class="item wow fadeInUp", data-wow-duration="1s")
+										+product-block('product9.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.2s")
+										+product-block('product3.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.4s")
+										+product-block('product4.jpg', 'home', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.6s")
+										+product-block('product5.jpg', 'debora', 'Mỹ phẩm châu Âu', '355.000')
+									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.8s")
+										+product-block('product6.jpg', 'sarvon', 'Mỹ phẩm châu Âu', '355.000')
+									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="1s")
+										+product-block('product7.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+									.item
+										+product-block('product8.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+									.item
+										+product-block('product10.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+							div(class="tab-pane container-fluid", id="menu2")
+								+tab-menu('Mỹ phẩm', 'Chăm sóc da', 'Dành cho tóc', 'Nước hoa', 'Trang sức', 'Quà tặng')
+								.owl-carousel
+									div(class="item wow fadeInUp", data-wow-duration="1s")
+										+product-block('product9.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.2s")
+										+product-block('product3.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.4s")
+										+product-block('product4.jpg', 'home', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.6s")
+										+product-block('product5.jpg', 'debora', 'Mỹ phẩm châu Âu', '355.000')
+									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.8s")
+										+product-block('product6.jpg', 'sarvon', 'Mỹ phẩm châu Âu', '355.000')
+									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="1s")
+										+product-block('product7.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+									.item
+										+product-block('product8.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+									.item
+										+product-block('product10.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+		// end .product-tabs
+		section.social
+			.container
+				.row.d-flex.justify-content-around
+					+social({facebook:'facebook', twitter: 'twitter', instagram: 'instagram', google: 'google-plus', pinterest: 'pinterest', linkedin: 'linkedin'})
+		// end .social
+		section.above-footer
+			.container
+				.row
+					.col-sm-12.col-lg-4
+						div(class="about-us wow slideInLeft", data-wow-duration="1s")
+							h3 Về chúng tôi
+							img(src="images/logo.png", alt="logo", class="img-fluid")
+							h4 Giới thiệu chung về mỹ phẩm handmade Mandala
+							p Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt. Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.
+
+							a(href="#", title="view more") Xem thêm
+					.col-sm-12.col-lg-4
+						div(class="blog wow fadeInUp", data-wow-duration="1s", data-wow-delay="0.3s")
+							h3 Blog
+							.blog_img
+								a(href="#", title="")
+									img(src="images/blog-img.jpg", alt="img blog", class="img-fluid")
+							h4 
+								a(href="#", title="", class="blog__title") Review son kem Bourjois Velvet copy
+							.blog__content
+								p Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.
+								span.blog__author Bởi NamTran ( 27 / 05 / 2015 )
+							.blog__meta
+								a(href="#", title="") Đọc thêm
+									i.fa.fa-angle-right
+								a(href="#", title="", class="float-right") 23 Bình luận
+					div(class="col-sm-12 col-lg-4 mt-2 mt-lg-0 wow slideInRight", data-wow-duration="1s")
+						.contact-form.text-center
+							h3 Gửi Email cho chúng tôi
+							form(action="#")
+								.form-group
+									input(
+										type="email"
+										class="form-control rounded-0"
+										name="email"
+										placeholder="Email của bạn"
+									)
+								p Gửi email để nhận những ưu đãi mới nhất
+								.form-group
+									button(type="submit", class="btn rounded-0") Gửi
+						h3 Tag sản phẩm
+						.product-tags
+							+product-tags('Đồng hồ', 'Túi', 'Phụ kiện', 'Đồng hồ', 'Túi', 'Giày', 'Sandal', 'Áo sơ mi', 'Nước hoa', 'Giày', 'Sandal', 'Trẻ em', 'Thời trang nữ', 'Trẻ em', 'Thời trang nữ')
+	// end main
+	+popup
+	+footer
