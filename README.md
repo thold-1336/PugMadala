@@ -1,4 +1,4 @@
-# {madala}
+# Madala
 
 ## Install
 
