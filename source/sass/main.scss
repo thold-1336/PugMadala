@@ -1,10 +1,34 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/owl.carousel/src/scss/owl.carousel';
 @import 'vendors/bootstrap-override-variable';
 @import 'font-awesome';
 
-@import 'abstracts/index';
-@import 'base/index';
+// Import abstracts styles
+@import 'abstracts/animate';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
 
-@import 'layout/index';
-@import 'plugins/index';
-@import 'components/index';
+// Import base styles
+@import 'base/base';
+@import 'base/colors';
+@import 'base/images';
+@import 'base/typography';
+
+// Import layout styles
+@import 'layout/content';
+@import 'layout/extends';
+@import 'layout/footer';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/section';
+
+// Import components styles
+@import 'components/block';
+@import 'components/mega-menu';
+@import 'components/popup';
+@import 'components/product';
+@import 'components/navigation-tab';
+@import 'components/table';
+@import 'components/title';
+@import 'components/ui-elements';

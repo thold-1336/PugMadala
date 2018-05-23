@@ -20,11 +20,11 @@ $color: null) {
   color: $color;
 }
 
-@mixin transition ( $transition...) {
+@mixin transition ($transition...) {
   transition: $transition;
 }
 
-@mixin border-radius ( $radius) {
+@mixin border-radius ($radius) {
   border-radius: $radius;
 }
 
@@ -36,7 +36,7 @@ $color) {
   border-color: $color;
 }
 
-@mixin box-circle ( $width,
+@mixin box-circle ($width,
 $height,
 $l-height: null) {
   width: $width;
@@ -45,6 +45,5 @@ $l-height: null) {
 }
 
 @mixin font-size ($size) {
-  font-size: $size;
   font-size: calculate-rem($size);
 }

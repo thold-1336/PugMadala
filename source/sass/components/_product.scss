@@ -1,0 +1,194 @@
+// scss-lint:disable NestingDepth
+.product-block {
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+
+  &__caption {
+    background: $white;
+    border-top: 1px dashed $silver;
+    padding: 20px 0 15px;
+    text-align: center;
+
+    h3 {
+      @include font-size(13px);
+      text-transform: uppercase;
+
+      a {
+        color: $gray-2;
+      }
+    }
+
+    h4 {
+      @include font-size(16px);
+
+      a {
+        color: $black;
+      }
+    }
+
+    span {
+      @include font-size(18px);
+      font-family: $font-family-lobster;
+    }
+  }
+
+  &__price {
+    color: $primary;
+
+    &--regular {
+      @include font-size(14px);
+      color: $gray-2;
+    }
+
+    &--sale {
+      color: $cardinal;
+    }
+  }
+
+  &__separate {
+    background: $silver;
+    display: inherit;
+    height: 2px;
+    margin: 0 auto 5px;
+    width: 50px;
+  }
+
+  &__action {
+    @include transition(all .5s ease);
+    background: $white;
+    opacity: 0;
+    padding: 0 0 30px;
+    text-align: center;
+    transform: translateY(50px);
+    visibility: hidden;
+    width: 100%;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 30px;
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    a {
+      @include border-radius(10px);
+      @include transition(all .3s ease);
+      border: 2px solid $silver;
+      color: $black;
+      margin-right: 3px;
+      padding: 6px 10px;
+
+      &:hover {
+        background: $primary;
+        border: 2px solid $primary;
+        color: $white;
+      }
+    }
+  }
+
+  img {
+    @include transition(all .3s ease);
+    transform: scale(1);
+  }
+
+  &:hover &__action {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+}
+
+.bg-sunflower {
+  background-color: $sunflower;
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 20px;
+  }
+
+  h3 {
+    border-bottom: 1px solid rgba($white, .7);
+    color: $white;
+
+    &::after {
+      background-color: $sunflower;
+      background-image: url('../images/bg-title-product-white.jpg');
+    }
+  }
+
+  &::before {
+    @extend %product-arrow-left;
+    border-right: 20px solid $sunflower;
+  }
+}
+
+.bg-greyser {
+  background-color: $greyser;
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 20px;
+  }
+
+  h3::after {
+    background-color: $greyser;
+  }
+
+  &::after {
+    @extend %product-arrow-right;
+    border-left: 20px solid $greyser;
+  }
+}
+
+.bg-bermuda {
+  background-color: $bermuda;
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    margin: 10px 0 20px;
+  }
+
+  h3::after {
+    background-color: $bermuda;
+  }
+
+  &::after {
+    @extend %product-arrow-right;
+    border-left: 20px solid $bermuda;
+  }
+}
+
+.bg-pink {
+  background-color: $pink;
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 20px;
+  }
+
+  h4 {
+    @include font-size(35px);
+    font-family: $font-family-playball;
+    font-weight: $font-weight-normal;
+    margin: 10px 0 0;
+  }
+
+  h5 {
+    @include font-size(14px);
+
+    span {
+      @include font-size(24px);
+      letter-spacing: 2px;
+    }
+  }
+
+  &::before {
+    @extend %product-arrow-left;
+    border-right: 20px solid $pink;
+  }
+}

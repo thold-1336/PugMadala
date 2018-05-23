@@ -3,25 +3,25 @@
 @import 'https://fonts.googleapis.com/css?family=Playball';
 @import 'https://fonts.googleapis.com/css?family=Roboto';
 @import 'https://fonts.googleapis.com/css?family=Lobster';
-
+// scss-lint:disable UrlFormat
 @font-face {
-  font-family: "UTM ViceroyJF";
-  src: url("../fonts/UTM ViceroyJF.ttf") format("truetype"),
+  font-family: 'UTM ViceroyJF';
+  src: url('../fonts/UTM ViceroyJF.ttf') format('truetype'),
   url('../fonts/UTM ViceroyJF.eot') format('embedded-opentype');
 }
 
 @font-face {
-  font-family: "UTM A&S Graceland";
+  font-family: 'UTM A&S Graceland';
   src: url('../fonts/UTM A&S Graceland.eot') format('embedded-opentype'),
-  url("../fonts/UTM A&S Graceland.ttf") format("truetype");
+  url('../fonts/UTM A&S Graceland.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "UTM AvoBold";
+  font-family: 'UTM AvoBold';
   src: url('../fonts/UTM AvoBold.eot') format('embedded-opentype');
 }
 
 @font-face {
-  font-family: "Playball";
-  src: url("../fonts/Playball.ttf") format("truetype");
+  font-family: 'Playball';
+  src: url('../fonts/Playball.ttf') format('truetype');
 }

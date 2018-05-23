@@ -1,0 +1,95 @@
+.overlay-newsletter {
+  @include transition(all .5s ease);
+  background: rgba(0, 0, 0, .5);
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1995;
+}
+
+.newsletter {
+  @include transition(all .5s ease);
+  left: 50%;
+  opacity: 0;
+  position: fixed;
+  text-align: center;
+  top: 20%;
+  transform: translate(-50%, -20%);
+  visibility: hidden;
+  z-index: 1995;
+
+  a {
+    color: $white;
+    display: inline-block;
+    font-size: 3rem;
+    margin-bottom: 40px;
+  }
+
+  &__content {
+    @include border-radius(50%);
+    @include font-size(12px);
+    @include transition(all .3s ease);
+    background-image: url('#{$path-image}/bg_popup.png');
+    background-size: contain;
+    color: $dove-gray;
+    min-height: 600px;
+    min-width: 600px;
+    padding: 190px 50px 0;
+
+    @include media-breakpoint-down(sm) {
+      min-height: 320px;
+      min-width: 320px;
+      padding: 60px 30px;
+    }
+
+    h3 {
+      @include font-size(28px);
+      color: $codgray-1;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+
+      @include media-breakpoint-down(sm) {
+        @include font-size(20px);
+      }
+    }
+
+    p {
+      line-height: 20px;
+      margin-bottom: 0;
+    }
+
+  // scss-lint:disable QualifyingElement
+    input[type="email"] {
+      @include border-radius(50px);
+      border-width: 2px;
+      margin: 25px 0 20px;
+
+      @include media-breakpoint-down(sm) {
+        margin: 0 auto;
+      }
+    }
+
+    button {
+      @include font-size(14px);
+      background-color: transparent;
+      color: $codgray-3;
+      letter-spacing: .8px;
+      text-decoration: underline;
+      text-transform: uppercase;
+
+      @include media-breakpoint-down(sm) {
+        @include font-size(12px);
+      }
+    }
+  }
+}
+
+.show-popup {
+  opacity: 1;
+  visibility: visible;
+}

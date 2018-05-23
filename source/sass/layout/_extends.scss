@@ -1,20 +1,20 @@
 %price {
   @include font-size(14px);
   color: $primary;
-  font-family: $stack-lobster;
+  font-family: $font-family-lobster;
 }
 
 %product-arrow-left {
-  position: absolute;
-  z-index: 1;
-  content: '';
-  top: 50%;
-  transform: translateY(-50%);
-  left: -15px;
-  width: 0;
-  height: 0;
   border-bottom: 20px solid transparent;
   border-top: 20px solid transparent;
+  content: '';
+  height: 0;
+  left: -15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  z-index: 1;
 
   @include media-breakpoint-down(sm) {
     display: none;
@@ -22,15 +22,16 @@
 }
 
 %product-arrow-right {
-  position: absolute;
-  z-index: 1;
-  content: '';
-  top: 45%;
-  right: -15px;
-  width: 0;
-  height: 0;
   border-bottom: 20px solid transparent;
   border-top: 20px solid transparent;
+  content: '';
+  height: 0;
+  position: absolute;
+  right: -15px;
+  top: 45%;
+  width: 0;
+  z-index: 1;
+  
   @include media-breakpoint-down(sm) {
     display: none;
   }
