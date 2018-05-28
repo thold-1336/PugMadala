@@ -1,8 +1,4 @@
-include modules/head/head
-include modules/header/header
-include modules/content/content
-include modules/content/popup
-include modules/footer/footer
+include modules/include/all
 
 doctype html
 +head
@@ -33,7 +29,7 @@ body
 						.banner-product__left.d-flex
 							+banner-text('Nước hoa', 'bg-greyser')
 							.col-sm-6.gutter-10
-								+banner-promo('bg1.jpg', 'Từ 1/6 - 5/6/2015', '-40%', 'Mua hàng')
+								+banner-promo({imgName: 'bg1.jpg', title: 'Từ 1/6 - 5/6/2015', heading: '-40%', link: 'Mua hàng'})
 					div(
 						class="col-md-12 col-lg-6 gutter-10 wow fadeInRight"
 						data-wow-duration="1s"
@@ -134,59 +130,59 @@ body
 								+tab-menu('Mỹ phẩm', 'Chăm sóc da', 'Dành cho tóc', 'Nước hoa', 'Trang sức', 'Quà tặng')
 								.owl-carousel
 									div(class="item wow zoomIn", data-wow-duration="1s")
-										+product-block('product9.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+										+product-block({imgName: 'product9.jpg', category: 'tyffany', title: 'Mỹ phẩm châu Âu', salePrice: '355.000'})
 									div(class="item wow zoomIn", data-wow-duration="2s", data-wow-delay="0.2s")
-										+product-block('product3.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product3.jpg', category: 'OHUI', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 									div(class="item wow zoomIn", data-wow-duration="2s", data-wow-delay="0.4s")
-										+product-block('product4.jpg', 'home', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+										+product-block({imgName: 'product4.jpg', category: 'home', title: 'Mỹ phẩm châu Âu', price: '355.000', regularPrice: '450.000'})
 									div(class="item wow zoomIn", data-wow-duration="2s", data-wow-delay="0.6s")
-										+product-block('product5.jpg', 'debora', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product5.jpg', category: 'debora', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 									div(class="item wow zoomIn", data-wow-duration="2s", data-wow-delay="0.8s")
-										+product-block('product6.jpg', 'sarvon', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product6.jpg', category: 'sarvon', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 									div(class="item wow zoomIn", data-wow-duration="2s", data-wow-delay="1s")
-										+product-block('product7.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+										+product-block({imgName: 'product7.jpg', category: 'tyffany', title: 'Mỹ phẩm châu Âu', salePrice: '355.000'})
 									.item
-										+product-block('product8.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+										+product-block({imgName: 'product8.jpg', category: 'OHUI', title: 'Mỹ phẩm châu Âu', price: '355.000', regularPrice: '450.000'})
 									.item
-										+product-block('product10.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product10.jpg', category: 'OHUI', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 							div(class="tab-pane container-fluid", id="menu1")
 								+tab-menu('Mỹ phẩm', 'Chăm sóc da', 'Dành cho tóc', 'Nước hoa', 'Trang sức', 'Quà tặng')
 								.owl-carousel
 									div(class="item wow fadeInUp", data-wow-duration="1s")
-										+product-block('product9.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+										+product-block({imgName: 'product9.jpg', category: 'tyffany', title: 'Mỹ phẩm châu Âu', salePrice: '355.000'})
 									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.2s")
-										+product-block('product3.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product3.jpg', category: 'OHUI', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.4s")
-										+product-block('product4.jpg', 'home', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+										+product-block({imgName: 'product4.jpg', category: 'home', title: 'Mỹ phẩm châu Âu', price: '355.000', regularPrice: '450.000'})
 									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.6s")
-										+product-block('product5.jpg', 'debora', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product5.jpg', category: 'debora', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.8s")
-										+product-block('product6.jpg', 'sarvon', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product6.jpg', category: 'sarvon', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="1s")
-										+product-block('product7.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+										+product-block({imgName: 'product7.jpg', category: 'tyffany', title: 'Mỹ phẩm châu Âu', salePrice: '355.000'})
 									.item
-										+product-block('product8.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+										+product-block({imgName: 'product8.jpg', category: 'OHUI', title: 'Mỹ phẩm châu Âu', price: '355.000', regularPrice: '450.000'})
 									.item
-										+product-block('product10.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product10.jpg', category: 'OHUI', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 							div(class="tab-pane container-fluid", id="menu2")
 								+tab-menu('Mỹ phẩm', 'Chăm sóc da', 'Dành cho tóc', 'Nước hoa', 'Trang sức', 'Quà tặng')
 								.owl-carousel
 									div(class="item wow fadeInUp", data-wow-duration="1s")
-										+product-block('product9.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+										+product-block({imgName: 'product9.jpg', category: 'tyffany', title: 'Mỹ phẩm châu Âu', salePrice: '355.000'})
 									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.2s")
-										+product-block('product3.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product3.jpg', category: 'OHUI', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.4s")
-										+product-block('product4.jpg', 'home', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+										+product-block({imgName: 'product4.jpg', category: 'home', title: 'Mỹ phẩm châu Âu', price: '355.000', regularPrice: '450.000'})
 									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.6s")
-										+product-block('product5.jpg', 'debora', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product5.jpg', category: 'debora', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="0.8s")
-										+product-block('product6.jpg', 'sarvon', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product6.jpg', category: 'sarvon', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 									div(class="item wow fadeInUp", data-wow-duration="2s", data-wow-delay="1s")
-										+product-block('product7.jpg', 'tyffany', 'Mỹ phẩm châu Âu', null, null, '355.000')
+										+product-block({imgName: 'product7.jpg', category: 'tyffany', title: 'Mỹ phẩm châu Âu', salePrice: '355.000'})
 									.item
-										+product-block('product8.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000', '450.000')
+										+product-block({imgName: 'product8.jpg', category: 'OHUI', title: 'Mỹ phẩm châu Âu', price: '355.000', regularPrice: '450.000'})
 									.item
-										+product-block('product10.jpg', 'OHUI', 'Mỹ phẩm châu Âu', '355.000')
+										+product-block({imgName: 'product10.jpg', category: 'OHUI', title: 'Mỹ phẩm châu Âu', price: '355.000'})
 		// end .product-tabs
 		section.social
 			.container

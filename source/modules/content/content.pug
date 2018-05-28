@@ -1,46 +1,46 @@
-mixin feature-item(imagename, content)
+mixin feature-item(imgName, content)
   .feature-box__item.d-flex.justify-content-start.d-sm-inline-block
-    img(src="images/" + imagename, alt="feature img", class="img-fluid mr-2 mr-sm-0")
+    img(src="images/" + imgName, alt="feature img", class="img-fluid mr-2 mr-sm-0")
     p= content 
 
-mixin banner-img(img_name)
+mixin banner-img(imgName)
   .col-12.col-sm-6.gutter-10
     .banner-product__left--img
       a(href="#", title="")
-        img(src="images/" + img_name, alt="banner product", class="img-fluid")
+        img(src="images/" + imgName, alt="banner product", class="img-fluid")
   
-mixin banner-text(title, data)
+mixin banner-text(title, content)
   .col-12.col-sm-6.gutter-10
-    div(class="banner-product__left--text d-flex justify-content-center align-items-center " + data)
+    div(class="banner-product__left--text d-flex justify-content-center align-items-center " + content)
       h3= title
 
-mixin banner-promo(img_name, title, heading, link=null)
+mixin banner-promo(banner)
     .banner-product__left--img
-      img(src="images/" + img_name, alt="", class="img-fluid")
+      img(src="images/" + banner.imgName, alt="", class="img-fluid")
       .promo-content
-        span= title
-        h3= heading
-        if link != null
-          a(href="#", title="", class="float-right")= link
+        span= banner.title
+        h3= banner.heading
+        if banner.link
+          a(href="#", title="", class="float-right")= banner.link
 
-mixin product-block(img_name, category, title, price, regular_price, sale_price)
+mixin product-block(productData)
   .product-block
     a(href="#", title="product")
-      img(src="images/" + img_name, alt="product", class="img-fluid")
+      img(src="images/" + productData.imgName, alt="product", class="img-fluid")
     .product-block__caption
       h3.product-block__category
-        a(href="#", title="product title")= category
-      h4.product-block__title= title
+        a(href="#", title="product title")= productData.category
+      h4.product-block__title= productData.title
       span.product-block__separate
-      if price
+      if productData.price
         span.product-block__price.
-          #{price} #[sup đ]
-      if regular_price
-        span.product-block__price--regular= regular_price
+          #{productData.price} #[sup đ]
+      if productData.regularPrice
+        span.product-block__price--regular= productData.regularPrice
           sup.
             đ
-      if sale_price
-        span.product-block__price--sale= sale_price
+      if productData.salePrice
+        span.product-block__price--sale= productData.salePrice
           sup.
             đ
     .product-block__action.align-content-center
